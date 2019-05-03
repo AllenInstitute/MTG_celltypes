@@ -1,0 +1,61 @@
+---
+title: "Human MTG nuclei FACS metadata"
+output: html_notebook
+---
+  
+  
+```{r init-workspace, echo=FALSE, message=FALSE, warning=FALSE}
+# Load libraries 
+library(reshape2)
+library(feather)
+
+```
+
+
+```{r load-data, message=FALSE}
+facs.meta <- read_csv(file = "../data/human/mtg_facs_metadata.csv")
+anno <- as.data.frame(read_feather("../data/human/anno.feather"))
+dend1 <- readRDS("../data/human/dend.RData")
+
+human.cl <- unlist(dendrapply(dend1, function(x) if (is.leaf(x)) attr(x, "label")))
+facs.meta$cluster <- factor(facs.meta$cluster, levels = human.cl)
+facs.meta$cluster_type <- factor(facs.meta$cluster_type, levels = c("inh", "exc", "glia"))
+facs.meta$cluster_color <- anno$cluster_color[match(facs.meta$cluster, anno$cluster_label)]
+
+```
+
+
+```{r plot-facs, fig.width = 12, fig.height = 8}
+cl.cnt <- table(facs.meta$cluster)
+keep.cl <- names(cl.cnt[cl.cnt >= 5])
+
+
+plot_facs <- function(dat) {
+  cl.color <- setNames(dat$cluster_color, dat$cluster)
+  ggplot(data = dat) + 
+    aes(x = cluster, y = value, color = cluster) +
+    facet_grid(facs ~ ., scales = "free_y") +
+    # geom_point(position = position_jitter(w = 0.15, h = 0)) + 
+    stat_summary(fun.data = "mean_cl_boot") +
+    scale_x_discrete(drop = FALSE) +
+    scale_color_manual(values = cl.color, guide = FALSE) +
+    xlab("") +
+    ylab("") +
+    theme_bw() + 
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+}
+
+
+g.facs <- facs.meta %>% 
+  filter(cluster %in% keep.cl) %>% 
+  rename(NeuN = `PE-A Mean`, FSC = `FSC-A Mean`, SSC =`SSC-A Mean`, DAPI = `DAPI-A Mean`) %>% 
+  gather(facs, value, NeuN:SSC) %>% 
+  mutate(facs = factor(facs, levels = c("NeuN", "FSC", "SSC"))) %>% 
+  filter(! is.na(value)) %>% 
+  do(plot = plot_facs(.))
+
+plot(g.facs$plot[[1]])
+
+ggsave(g.facs$plot[[1]], filename = "../output/facs.meta.by.cluster.pdf", width = 12, height = 8)
+
+```
