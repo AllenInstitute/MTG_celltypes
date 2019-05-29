@@ -1,0 +1,174 @@
+---
+title: "Data input from website"
+author: "Jeremy Miller"
+date: "March 8, 2019"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Overview
+
+This script reads converts data downloaded from the Allen Institute Cell Types Database (http://celltypes.brain-map.org/rnaseq) into a format compatible for use as comparison data to human fronto-insula.
+
+### Prior to running any code, download the data:
+  
+1. If needed, set the working directory first: e.g., `setwd("C:/Users/yourname/Desktop/analysis/")`  
+2. Create a subfolder in your current working directory called `website_data`.  **This should be the same folder where you download everything in the `data` directory from `MTG_celltypes`.**
+3. Download and unzip the following files in `data`.  
+    a. Human MTG:  http://celltypes.brain-map.org/api/v2/well_known_file_download/694416044  
+    b. Mouse VISp: http://celltypes.brain-map.org/api/v2/well_known_file_download/694413985  
+    c. Mouse ALM:  http://celltypes.brain-map.org/api/v2/well_known_file_download/694413179 
+_NOTE: These links are accurate as of April 2019.  If these data are moved in later releases, this code document will be updated accordingly - please post an Issue if needed.  Similarly, note that the dates below may need to be updated._  
+
+
+```{r setwd}
+homeFolder <- "Z:/hct/HCT_RNAseq/Jeremy/MTG_celltypes/MTG_celltypes/"  # UPDATE WITH CORRECT PATH
+knitr::opts_knit$set(root.dir = homeFolder)  
+#setwd(homeFolder) # UPDATE WITH CORRECT PATH
+```
+
+
+### Load the relevant libraries
+
+```{r load libraries, warnings=FALSE}
+source(paste0(homeFolder,"R/Support_Code0_functions.R"))
+suppressPackageStartupMessages({
+  library(feather)
+  library(matrixStats)
+  library(dplyr)
+  library(edgeR)
+})
+options(stringsAsFactors=FALSE)
+```
+  
+  
+## Process the human MTG data
+  
+First we need to read the data into R. *This step is slow.*  
+  
+```{r read in MTG data}
+exons    <- read.csv(paste0(homeFolder,"website_data/human_MTG_2018-06-14_exon-matrix.csv"),row.names=1)
+introns  <- read.csv(paste0(homeFolder,"website_data/human_MTG_2018-06-14_intron-matrix.csv"),row.names=1)
+geneInfo <- read.csv(paste0(homeFolder,"website_data/human_MTG_2018-06-14_genes-rows.csv"),row.names=1)
+sampInfo <- read.csv(paste0(homeFolder,"website_data/human_MTG_2018-06-14_samples-columns.csv"),row.names=1)
+```
+  
+Second, convert the meta-data files into formats consistent with the rest of the analysis.  Note that the MTG cluster colors (and other info) which is stored as a data file in `VENcelltypes`.  
+  
+```{r format MTG metadata}
+# Omit cells with no class
+kp <- sampInfo$cluster!="no class"
+
+# Format the cluster info
+anno <- auto_annotate(sampInfo[kp,])
+anno$sample_id <- anno$sample_name
+
+# Update the correct cluster colors and ids
+load(paste0(homeFolder,"data/clusterInfoMTG.RData"))        #### May need to adjust location
+anno$cluster_color <- clusterInfoMTG$cluster_color[match(anno$cluster_label,clusterInfoMTG$cluster_label)]
+anno$cluster_id    <- clusterInfoMTG$cluster_id[match(anno$cluster_label,clusterInfoMTG$cluster_label)]
+```
+  
+  
+Next, convert the data into CPM(exons+introns) and format appropriately.    
+  
+```{r format MTG data}
+## Calculate CPM
+CPM <- cpm(introns+exons)
+rownames(CPM) <- rownames(geneInfo)
+colnames(CPM) <- anno$sample_id
+
+## Format appropriately
+data <- as.data.frame(t(CPM))
+data$sample_id <- anno$sample_id
+```
+  
+Finally, output the results to feather files in the `MTG` directory.  
+  
+```{r output MTG data}
+# Create MTG directory
+dir.create(paste0(homeFolder,"MTG"))
+
+# Write annotation file
+write_feather(anno,paste0(homeFolder,"MTG/anno.feather"))
+
+# Write data file
+write_feather(data,paste0(homeFolder,"MTG/data.feather"))
+```
+  
+## Process the mouse data
+  
+We are going to read in the vISp and ALM data separately, and then save them to a single folder location since they were combined for the mouse analysis.  
+  
+First we need to read the VISp data into R. *This step is slow.*  
+  
+```{r read in VISp data}
+exonsV    <- read.csv(paste0(homeFolder,"website_data/mouse_VISp_2018-06-14_exon-matrix.csv"),row.names=1)
+intronsV  <- read.csv(paste0(homeFolder,"website_data/mouse_VISp_2018-06-14_intron-matrix.csv"),row.names=1)
+geneInfoV <- read.csv(paste0(homeFolder,"website_data/mouse_VISp_2018-06-14_genes-rows.csv"),row.names=1)
+sampInfoV <- read.csv(paste0(homeFolder,"website_data/mouse_VISp_2018-06-14_samples-columns.csv"),row.names=1)
+```
+  
+Second, we need to read the ALM data into R.  *This step is slow.*  
+  
+```{r read in ALM data}
+exonsA    <- read.csv(paste0(homeFolder,"website_data/mouse_ALM_2018-06-14_exon-matrix.csv"),row.names=1)
+intronsA  <- read.csv(paste0(homeFolder,"website_data/mouse_ALM_2018-06-14_intron-matrix.csv"),row.names=1)
+geneInfoA <- read.csv(paste0(homeFolder,"website_data/mouse_ALM_2018-06-14_genes-rows.csv"),row.names=1)
+sampInfoA <- read.csv(paste0(homeFolder,"website_data/mouse_ALM_2018-06-14_samples-columns.csv"),row.names=1)
+```
+  
+  
+Third, we need to merge the ALM and VISp data.  
+  
+```{r merge ALM and VISp}
+exons    <- cbind(exonsV,exonsA)
+introns  <- cbind(intronsV,intronsA)
+geneInfo <- geneInfoA
+sampInfo <- rbind(sampInfoV,sampInfoA)
+```
+  
+  
+Fourth, convert the meta-data files into formats consistent with the rest of the analysis.  
+  
+```{r format VISp metadata}
+sampInfo[is.na(sampInfo)]=0
+anno <- auto_annotate(sampInfo)
+anno$sample_id <- anno$sample_name
+```
+  
+Next, convert the data into CPM(exons+introns) and format appropriately.  
+  
+```{r format VISp data}
+## Calculate CPM
+CPM <- cpm(introns+exons)
+rownames(CPM) <- rownames(geneInfo)
+colnames(CPM) <- anno$sample_id
+
+## Format appropriate
+data <- as.data.frame(t(CPM))
+data$sample_id <- anno$sample_id
+```
+  
+Finally, output the results to feather files in the `mouse` directory.  
+  
+```{r output VISp data}
+# Create MTG directory
+dir.create("mouse")
+
+# Write annotation file
+write_feather(anno,paste0(homeFolder,"mouse/anno.feather"))
+
+# Write data file
+write_feather(data,paste0(homeFolder,"mouse/data.feather"))
+```
+  
+  
+Output session information.  
+  
+```{r sessionInfo}
+sessionInfo()
+```
