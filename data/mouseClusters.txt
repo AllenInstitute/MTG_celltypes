@@ -1,0 +1,133 @@
+Lamp5 Krt73
+Lamp5 Fam19a1 Pax6
+Lamp5 Fam19a1 Tmem182
+Lamp5 Ntn1 Npy2r
+Lamp5 Plch2 Dock5
+Lamp5 Lsp1
+Lamp5 Lhx6
+Sncg Slc17a8
+Sncg Vip Nptx2
+Sncg Gpr50
+Sncg Vip Itih5
+Serpinf1 Clrn1
+Serpinf1 Aqp5 Vip
+Vip Igfbp6 Car10
+Vip Igfbp6 Pltp
+Vip Igfbp4 Mab21l1
+Vip Arhgap36 Hmcn1
+Vip Gpc3 Slc18a3
+Vip Lmo1 Fam159b
+Vip Lmo1 Myl1
+Vip Ptprt Pkp2
+Vip Rspo4 Rxfp1 Chat
+Vip Lect1 Oxtr
+Vip Rspo1 Itga4
+Vip Chat Htr1f
+Vip Pygm C1ql1
+Vip Crispld2 Htr2c
+Vip Crispld2 Kcne4
+Vip Col15a1 Pde1a
+Sst Chodl
+Sst Mme Fam114a1
+Sst Tac1 Htr1d
+Sst Tac1 Tacr3
+Sst Calb2 Necab1
+Sst Calb2 Pdlim5
+Sst Nr2f2 Necab1
+Sst Myh8 Etv1 
+Sst Myh8 Fibin
+Sst Chrna2 Glra3
+Sst Chrna2 Ptgdr
+Sst Tac2 Myh4
+Sst Hpse Sema3c
+Sst Hpse Cbln4
+Sst Crhr2 Efemp1
+Sst Crh 4930553C11Rik 
+Sst Esm1
+Sst Tac2 Tacstd2
+Sst Rxfp1 Eya1
+Sst Rxfp1 Prdm8
+Sst Nts
+Pvalb Gabrg1
+Pvalb Th Sst
+Pvalb Akr1c18 Ntf3
+Pvalb Calb1 Sst
+Pvalb Sema3e Kank4
+Pvalb Gpr149 Islr
+Pvalb Reln Tac1
+Pvalb Reln Itm2a
+Pvalb Tpbg
+Pvalb Vipr2
+L2/3 IT VISp Rrad
+L2/3 IT VISp Adamts2
+L2/3 IT VISp Agmat
+L2/3 IT ALM Sla
+L2/3 IT ALM Ptrf
+L2/3 IT ALM Macc1 Lrg1
+L4 IT VISp Rspo1
+L5 IT VISp Hsd11b1 Endou
+L5 IT VISp Whrn Tox2
+L5 IT VISp Batf3
+L5 IT VISp Col6a1 Fezf2
+L5 IT VISp Col27a1
+L5 IT ALM Npw
+L5 IT ALM Pld5
+L5 IT ALM Cbln4 Fezf2
+L5 IT ALM Lypd1 Gpr88
+L5 IT ALM Tnc
+L5 IT ALM Tmem163 Dmrtb1
+L5 IT ALM Tmem163 Arhgap25
+L5 IT ALM Cpa6 Gpr88
+L5 IT ALM Gkn1 Pcdh19
+L6 IT ALM Tgfb1
+L6 IT ALM Oprk1
+L6 IT VISp Penk Col27a1
+L6 IT VISp Penk Fst
+L6 IT VISp Col23a1 Adamts2
+L6 IT VISp Col18a1
+L6 IT VISp Car3
+L5 PT VISp Chrna6
+L5 PT VISp Lgr5
+L5 PT VISp C1ql2 Ptgfr
+L5 PT VISp C1ql2 Cdh13
+L5 PT VISp Krt80
+L5 PT ALM Slco2a1
+L5 PT ALM Npsr1
+L5 PT ALM Hpgd
+L5 NP VISp Trhr Cpne7
+L5 NP ALM Trhr Nefl
+L5 NP VISp Trhr Met
+L6 NP ALM Trh
+L6 CT ALM Cpa6
+L6 CT ALM Nxph2 Sla
+L6 CT VISp Nxph2 Wls
+L6 CT VISp Gpr139
+L6 CT VISp Ctxn3 Brinp3
+L6 CT VISp Ctxn3 Sla
+L6 CT VISp Krt80 Sla
+L6b VISp Col8a1 Rprm
+L6b VISp Mup5
+L6b VISp Col8a1 Rxfp1
+L6b ALM Olfr111 Spon1
+L6b ALM Olfr111 Nxph1
+L6b P2ry12
+L6b VISp Crh
+L6b Hsd17b2
+Meis2 Adamts19
+CR Lhx5
+Astro Aqp4
+OPC Pdgfra Grm5
+OPC Pdgfra Ccnb1
+Oligo Rassf10
+Oligo Serpinb1a
+Oligo Synpr
+VLMC Osr1 Cd74
+VLMC Osr1 Mc5r
+VLMC Spp1 Hs3st6
+VLMC Spp1 Col15a1
+Peri Kcnj8
+SMC Acta2
+Endo Ctla2a
+Endo Cytl1
+PVM Mrc1
+Microglia Siglech

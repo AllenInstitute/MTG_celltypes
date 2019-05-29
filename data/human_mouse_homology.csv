@@ -1,0 +1,209 @@
+homol_type,species,cluster,cluster_type,cluster_color,tree_order
+Exc L2/3 IT,human,Exc L2 LAMP5 LTK,exc,#D9F077,26
+Exc L2/3 IT,human,Exc L2-3 LINC00507 FREM3,exc,#D9F077,26
+Exc L2/3 IT,human,Exc L2-4 LINC00507 GLP2R,exc,#D9F077,26
+Exc L2/3 IT,mouse,L2/3 IT ALM Macc1 Lrg1,exc,#D9F077,26
+Exc L2/3 IT,mouse,L2/3 IT ALM Ptrf,exc,#D9F077,26
+Exc L2/3 IT,mouse,L2/3 IT ALM Sla,exc,#D9F077,26
+Exc L2/3 IT,mouse,L2/3 IT VISp Adamts2,exc,#D9F077,26
+Exc L2/3 IT,mouse,L2/3 IT VISp Agmat,exc,#D9F077,26
+Exc L2/3 IT,mouse,L2/3 IT VISp Rrad,exc,#D9F077,26
+Exc L3/5 IT,human,Exc L3-4 RORB CARM1P1,exc,#00979D,22
+Exc L3/5 IT,mouse,L5 IT ALM Tmem163 Dmrtb1,exc,#00979D,22
+Exc L3/5 IT,mouse,L5 IT VISp Hsd11b1 Endou,exc,#00979D,22
+Exc L4/5 IT,human,Exc L3-5 RORB ESR1,exc,#00DDC5,24
+Exc L4/5 IT,human,Exc L3-5 RORB FILIP1L,exc,#00DDC5,24
+Exc L4/5 IT,human,Exc L3-5 RORB TWIST2,exc,#00DDC5,24
+Exc L4/5 IT,mouse,L4 IT VISp Rspo1,exc,#00DDC5,24
+Exc L4/5 IT,mouse,L5 IT ALM Cbln4 Fezf2,exc,#00DDC5,24
+Exc L4/5 IT,mouse,L5 IT ALM Lypd1 Gpr88,exc,#00DDC5,24
+Exc L4/5 IT,mouse,L5 IT ALM Npw,exc,#00DDC5,24
+Exc L4/5 IT,mouse,L5 IT ALM Pld5,exc,#00DDC5,24
+Exc L5 PT,human,Exc L4-5 FEZF2 SCN4B,exc,#104F00,29
+Exc L5 PT,mouse,L5 PT ALM Hpgd,exc,#104F00,29
+Exc L5 PT,mouse,L5 PT ALM Npsr1,exc,#104F00,29
+Exc L5 PT,mouse,L5 PT VISp C1ql2 Cdh13,exc,#104F00,29
+Exc L5 PT,mouse,L5 PT VISp C1ql2 Ptgfr,exc,#104F00,29
+Exc L5 PT,mouse,L5 PT VISp Krt80,exc,#104F00,29
+Exc L5 PT,mouse,L5 PT VISp Lgr5,exc,#104F00,29
+Exc L5/6 IT 1,human,Exc L3-5 RORB COL22A1,exc,#00A79D,21
+Exc L5/6 IT 1,mouse,L5 IT ALM Tnc,exc,#00A79D,21
+Exc L5/6 IT 1,mouse,L6 IT VISp Col18a1,exc,#00A79D,21
+Exc L5/6 IT 2,human,Exc L4-5 RORB DAPK2,exc,#00FF00,23
+Exc L5/6 IT 2,human,Exc L4-5 RORB FOLH1B,exc,#00FF00,23
+Exc L5/6 IT 2,human,Exc L4-6 RORB SEMA3E,exc,#00FF00,23
+Exc L5/6 IT 2,mouse,L5 IT ALM Cpa6 Gpr88,exc,#00FF00,23
+Exc L5/6 IT 2,mouse,L5 IT ALM Tmem163 Arhgap25,exc,#00FF00,23
+Exc L5/6 IT 2,mouse,L5 IT VISp Batf3,exc,#00FF00,23
+Exc L5/6 IT 2,mouse,L5 IT VISp Whrn Tox2,exc,#00FF00,23
+Exc L5/6 IT 3,human,Exc L4-6 RORB C1R,exc,#008F1F,25
+Exc L5/6 IT 3,human,Exc L5-6 RORB TTC12,exc,#008F1F,25
+Exc L5/6 IT 3,mouse,L5 IT VISp Col27a1,exc,#008F1F,25
+Exc L5/6 IT 3,mouse,L5 IT VISp Col6a1 Fezf2,exc,#008F1F,25
+Exc L5/6 IT 3,mouse,L6 IT ALM Tgfb1,exc,#008F1F,25
+Exc L5/6 NP,human,Exc L4-6 FEZF2 IL26,exc,#73CA95,30
+Exc L5/6 NP,mouse,L5 NP ALM Trhr Nefl,exc,#73CA95,30
+Exc L5/6 NP,mouse,L5 NP VISp Trhr Cpne7,exc,#73CA95,30
+Exc L5/6 NP,mouse,L5 NP VISp Trhr Met,exc,#73CA95,30
+Exc L5/6 NP,mouse,L6 NP ALM Trh,exc,#73CA95,30
+Exc L6 CT,human,Exc L5-6 FEZF2 ABO,exc,#1F6666,31
+Exc L6 CT,mouse,L6 CT ALM Cpa6,exc,#1F6666,31
+Exc L6 CT,mouse,L6 CT ALM Nxph2 Sla,exc,#1F6666,31
+Exc L6 CT,mouse,L6 CT VISp Ctxn3 Brinp3,exc,#1F6666,31
+Exc L6 CT,mouse,L6 CT VISp Ctxn3 Sla,exc,#1F6666,31
+Exc L6 CT,mouse,L6 CT VISp Gpr139,exc,#1F6666,31
+Exc L6 CT,mouse,L6 CT VISp Krt80 Sla,exc,#1F6666,31
+Exc L6 CT,mouse,L6 CT VISp Nxph2 Wls,exc,#1F6666,31
+Exc L6 IT 1,human,Exc L5-6 THEMIS C1QL3,exc,#A19922,27
+Exc L6 IT 1,mouse,L6 IT VISp Col23a1 Adamts2,exc,#A19922,27
+Exc L6 IT 1,mouse,L6 IT VISp Penk Col27a1,exc,#A19922,27
+Exc L6 IT 1,mouse,L6 IT VISp Penk Fst,exc,#A19922,27
+Exc L6 IT 2,human,Exc L5-6 THEMIS CRABP1,exc,#8046FF,28
+Exc L6 IT 2,human,Exc L5-6 THEMIS DCSTAMP,exc,#8046FF,28
+Exc L6 IT 2,human,Exc L5-6 THEMIS FGF10,exc,#8046FF,28
+Exc L6 IT 2,mouse,L6 IT ALM Oprk1,exc,#8046FF,28
+Exc L6 IT 2,mouse,L6 IT VISp Car3,exc,#8046FF,28
+Exc L6b,human,Exc L5-6 FEZF2 EFTUD1P1,exc,#335280,32
+Exc L6b,human,Exc L5-6 SLC17A7 IL15,exc,#335280,32
+Exc L6b,human,Exc L6 FEZF2 OR2T8,exc,#335280,32
+Exc L6b,human,Exc L6 FEZF2 SCUBE1,exc,#335280,32
+Exc L6b,mouse,L6b ALM Olfr111 Nxph1,exc,#335280,32
+Exc L6b,mouse,L6b ALM Olfr111 Spon1,exc,#335280,32
+Exc L6b,mouse,L6b VISp Col8a1 Rprm,exc,#335280,32
+Exc L6b,mouse,L6b Hsd17b2,exc,#335280,32
+Exc L6b,mouse,L6b P2ry12,exc,#335280,32
+Exc L6b,mouse,L6b VISp Col8a1 Rxfp1,exc,#335280,32
+Exc L6b,mouse,L6b VISp Crh,exc,#335280,32
+Exc L6b,mouse,L6b VISp Mup5,exc,#335280,32
+none,mouse,CR Lhx5,exc,#AAAAAA,38
+none,mouse,L5 IT ALM Gkn1 Pcdh19,exc,#AAAAAA,38
+none,mouse,L5 PT ALM Slco2a1,exc,#AAAAAA,38
+none,mouse,L5 PT VISp Chrna6,exc,#AAAAAA,38
+Astrocyte,human,Astro L1-2 FGFR3 GFAP,glia,#6B8059,34
+Astrocyte,human,Astro L1-6 FGFR3 SLC14A1,glia,#6B8059,34
+Astrocyte,mouse,Astro Aqp4,glia,#6B8059,34
+Endothelial,human,Endo L2-6 NOSTRIN,glia,#99796B,36
+Endothelial,mouse,Endo Ctla2a,glia,#99796B,36
+Endothelial,mouse,Endo Cytl1,glia,#99796B,36
+Microglia/PVM,human,Micro L1-3 TYROBP,glia,#598069,37
+Microglia/PVM,mouse,Microglia Siglech,glia,#598069,37
+Microglia/PVM,mouse,PVM Mrc1,glia,#598069,37
+none,mouse,Peri Kcnj8,glia,#AAAAAA,38
+none,mouse,SMC Acta2,glia,#AAAAAA,38
+none,mouse,VLMC Osr1 Cd74,glia,#AAAAAA,38
+none,mouse,VLMC Osr1 Mc5r,glia,#AAAAAA,38
+none,mouse,VLMC Spp1 Col15a1,glia,#AAAAAA,38
+none,mouse,VLMC Spp1 Hs3st6,glia,#AAAAAA,38
+Oligo,human,Oligo L1-6 OPALIN,glia,#476662,35
+Oligo,mouse,Oligo Rassf10,glia,#476662,35
+Oligo,mouse,Oligo Serpinb1a,glia,#476662,35
+Oligo,mouse,Oligo Synpr,glia,#476662,35
+OPC,human,OPC L1-6 PDGFRA,glia,#6B998D,33
+OPC,mouse,OPC Pdgfra Grm5,glia,#6B998D,33
+OPC,mouse,OPC Pdgfra Ccnb1,glia,#6B998D,33
+Chandelier,human,Inh L2-5 PVALB SCUBE3,inh,#FF197F,20
+Chandelier,mouse,Pvalb Vipr2,inh,#FF197F,20
+Lamp5 1,human,Inh L1 SST NMBR,inh,#E67B73,5
+Lamp5 1,human,Inh L1-2 LAMP5 DBP,inh,#E67B73,5
+Lamp5 1,mouse,Lamp5 Plch2 Dock5,inh,#E67B73,5
+Lamp5 2,human,Inh L1 SST CHRNA4,inh,#DD6091,6
+Lamp5 2,human,Inh L1-2 GAD1 MC4R,inh,#DD6091,6
+Lamp5 2,mouse,Lamp5 Fam19a1 Pax6,inh,#DD6091,6
+Lamp5 2,mouse,Lamp5 Fam19a1 Tmem182,inh,#DD6091,6
+Lamp5 2,mouse,Lamp5 Ntn1 Npy2r,inh,#DD6091,6
+Lamp5 Lhx6,human,Inh L2-6 LAMP5 CA1,inh,#C77963,2
+Lamp5 Lhx6,mouse,Lamp5 Lhx6,inh,#C77963,2
+Lamp5 Rosehip,human,Inh L1-4 LAMP5 LCP2,inh,#FFA388,1
+Lamp5 Rosehip,mouse,Lamp5 Lsp1,inh,#FFA388,1
+none,human,Inh L2-4 SST FRZB,inh,#FF554D,38
+none,mouse,Meis2 Adamts19,inh,#AAAAAA,38
+none,mouse,Sst Tac2 Myh4,inh,#AAAAAA,38
+none,mouse,Vip Igfbp4 Mab21l1,inh,#AAAAAA,38
+Pax6,human,Inh L1-2 PAX6 CDH12,inh,#DDACC9,3
+Pax6,human,Inh L1-2 PAX6 TNFAIP8L3,inh,#DDACC9,3
+Pax6,mouse,Lamp5 Krt73,inh,#DDACC9,3
+Pvalb 1,human,Inh L4-5 PVALB MEPE,inh,#994C00,18
+Pvalb 1,human,Inh L5-6 GAD1 GLP1R,inh,#994C00,18
+Pvalb 1,human,Inh L5-6 PVALB LGR5,inh,#994C00,18
+Pvalb 1,human,Inh L5-6 SST MIR548F2,inh,#994C00,18
+Pvalb 1,human,Inh L5-6 SST TH,inh,#994C00,18
+Pvalb 1,mouse,Pvalb Akr1c18 Ntf3,inh,#994C00,18
+Pvalb 1,mouse,Pvalb Gabrg1,inh,#994C00,18
+Pvalb 1,mouse,Pvalb Gpr149 Islr,inh,#994C00,18
+Pvalb 1,mouse,Pvalb Th Sst,inh,#994C00,18
+Pvalb 1,mouse,Sst Nts,inh,#994C00,18
+Pvalb 2,human,Inh L2-4 PVALB WFDC2,inh,#BC2B11,19
+Pvalb 2,human,Inh L4-6 PVALB SULF1,inh,#BC2B11,19
+Pvalb 2,mouse,Pvalb Calb1 Sst,inh,#BC2B11,19
+Pvalb 2,mouse,Pvalb Reln Itm2a,inh,#BC2B11,19
+Pvalb 2,mouse,Pvalb Reln Tac1,inh,#BC2B11,19
+Pvalb 2,mouse,Pvalb Sema3e Kank4,inh,#BC2B11,19
+Pvalb 2,mouse,Pvalb Tpbg,inh,#BC2B11,19
+Sst 1,human,Inh L3-6 SST HPGD,inh,#D9C566,15
+Sst 1,human,Inh L4-6 SST B3GAT2,inh,#D9C566,15
+Sst 1,mouse,Sst Chrna2 Glra3,inh,#D9C566,15
+Sst 1,mouse,Sst Chrna2 Ptgdr,inh,#D9C566,15
+Sst 1,mouse,Sst Myh8 Etv1 ,inh,#D9C566,15
+Sst 1,mouse,Sst Myh8 Fibin,inh,#D9C566,15
+Sst 1,mouse,Sst Nr2f2 Necab1,inh,#D9C566,15
+Sst 2,human,Inh L5-6 SST KLHDC8A,inh,#C11331,13
+Sst 2,mouse,Sst Crh 4930553C11Rik ,inh,#C11331,13
+Sst 2,mouse,Sst Crhr2 Efemp1,inh,#C11331,13
+Sst 2,mouse,Sst Esm1,inh,#C11331,13
+Sst 3,human,Inh L4-6 SST GXYLT2,inh,#802600,14
+Sst 3,human,Inh L5-6 SST NPM1P10,inh,#802600,14
+Sst 3,mouse,Sst Rxfp1 Eya1,inh,#802600,14
+Sst 3,mouse,Sst Rxfp1 Prdm8,inh,#802600,14
+Sst 3,mouse,Sst Tac2 Tacstd2,inh,#802600,14
+Sst 4,human,Inh L3-5 SST ADGRG6,inh,#804811,16
+Sst 4,human,Inh L4-5 SST STK32A,inh,#804811,16
+Sst 4,mouse,Sst Hpse Cbln4,inh,#804811,16
+Sst 4,mouse,Sst Hpse Sema3c,inh,#804811,16
+Sst 5,human,Inh L1-3 SST CALB1,inh,#BF480D,17
+Sst 5,mouse,Sst Calb2 Necab1,inh,#BF480D,17
+Sst 5,mouse,Sst Calb2 Pdlim5,inh,#BF480D,17
+Sst 5,mouse,Sst Mme Fam114a1,inh,#BF480D,17
+Sst 5,mouse,Sst Tac1 Htr1d,inh,#BF480D,17
+Sst 5,mouse,Sst Tac1 Tacr3,inh,#BF480D,17
+Sst Chodl,human,Inh L3-6 SST NPY,inh,#FFDA50,12
+Sst Chodl,mouse,Sst Chodl,inh,#FFDA50,12
+Vip 1,human,Inh L1-2 SST BAGE2,inh,#9440F3,7
+Vip 1,human,Inh L1-3 VIP ADAMTSL1,inh,#9440F3,7
+Vip 1,human,Inh L1-4 VIP PENK,inh,#9440F3,7
+Vip 1,mouse,Vip Igfbp6 Car10,inh,#9440F3,7
+Vip 1,mouse,Vip Igfbp6 Pltp,inh,#9440F3,7
+Vip 2,human,Inh L2-6 VIP QPCT,inh,#A700FF,8
+Vip 2,human,Inh L3-6 VIP HS3ST3A1,inh,#A700FF,8
+Vip 2,mouse,Vip Arhgap36 Hmcn1,inh,#A700FF,8
+Vip 2,mouse,Vip Gpc3 Slc18a3,inh,#A700FF,8
+Vip 2,mouse,Vip Lmo1 Fam159b,inh,#A700FF,8
+Vip 2,mouse,Vip Lmo1 Myl1,inh,#A700FF,8
+Vip 3,human,Inh L1-2 VIP PCDH20,inh,#BD3D9A,9
+Vip 3,human,Inh L2-5 VIP SERPINF1,inh,#BD3D9A,9
+Vip 3,human,Inh L2-5 VIP TYR,inh,#BD3D9A,9
+Vip 3,mouse,Serpinf1 Aqp5 Vip,inh,#BD3D9A,9
+Vip 3,mouse,Vip Chat Htr1f,inh,#BD3D9A,9
+Vip 3,mouse,Vip Pygm C1ql1,inh,#BD3D9A,9
+Vip 4,human,Inh L1-3 VIP CCDC184,inh,#FF00B3,10
+Vip 4,human,Inh L1-3 VIP CHRM2,inh,#FF00B3,10
+Vip 4,human,Inh L1-3 VIP GGH,inh,#FF00B3,10
+Vip 4,human,Inh L2-4 VIP CBLN1,inh,#FF00B3,10
+Vip 4,mouse,Vip Lect1 Oxtr,inh,#FF00B3,10
+Vip 4,mouse,Vip Ptprt Pkp2,inh,#FF00B3,10
+Vip 4,mouse,Vip Rspo1 Itga4,inh,#FF00B3,10
+Vip 4,mouse,Vip Rspo4 Rxfp1 Chat,inh,#FF00B3,10
+Vip 5,human,Inh L1-2 VIP LBH,inh,#AF00E6,11
+Vip 5,human,Inh L1-4 VIP CHRNA6,inh,#AF00E6,11
+Vip 5,human,Inh L1-4 VIP OPRM1,inh,#AF00E6,11
+Vip 5,human,Inh L2-3 VIP CASC6,inh,#AF00E6,11
+Vip 5,human,Inh L2-4 VIP SPAG17,inh,#AF00E6,11
+Vip 5,mouse,Vip Crispld2 Htr2c,inh,#AF00E6,11
+Vip 5,mouse,Vip Crispld2 Kcne4,inh,#AF00E6,11
+Vip Sncg,human,Inh L1-2 VIP TSPAN12,inh,#6C00BF,4
+Vip Sncg,human,Inh L1-3 PAX6 SYT6,inh,#6C00BF,4
+Vip Sncg,mouse,Serpinf1 Clrn1,inh,#6C00BF,4
+Vip Sncg,mouse,Sncg Gpr50,inh,#6C00BF,4
+Vip Sncg,mouse,Sncg Slc17a8,inh,#6C00BF,4
+Vip Sncg,mouse,Sncg Vip Itih5,inh,#6C00BF,4
+Vip Sncg,mouse,Sncg Vip Nptx2,inh,#6C00BF,4
+Vip Sncg,mouse,Vip Col15a1 Pde1a,inh,#6C00BF,4
