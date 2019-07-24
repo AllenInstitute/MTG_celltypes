@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Overview
 
-This script reads converts data downloaded from the Allen Institute Cell Types Database (http://celltypes.brain-map.org/rnaseq) into a format compatible for use as comparison data to human fronto-insula.
+This script reads converts data downloaded from the Allen Institute Cell Types Database (http://celltypes.brain-map.org/rnaseq) into a format compatible for these scripts.
 
 ### Prior to running any code, download the data:
   
@@ -25,7 +25,7 @@ _NOTE: These links are accurate as of April 2019.  If these data are moved in la
 
 
 ```{r setwd}
-homeFolder <- "Z:/hct/HCT_RNAseq/Jeremy/MTG_celltypes/MTG_celltypes/"  # UPDATE WITH CORRECT PATH
+homeFolder <- paste0(getwd(), "/")  # UPDATE WITH CORRECT PATH
 knitr::opts_knit$set(root.dir = homeFolder)  
 #setwd(homeFolder) # UPDATE WITH CORRECT PATH
 ```
@@ -67,7 +67,7 @@ anno <- auto_annotate(sampInfo[kp,])
 anno$sample_id <- anno$sample_name
 
 # Update the correct cluster colors and ids
-load(paste0(homeFolder,"data/clusterInfoMTG.RData"))        #### May need to adjust location
+load(paste0(homeFolder,"data/clusterInfoMTG.rda"))        #### May need to adjust location
 anno$cluster_color <- clusterInfoMTG$cluster_color[match(anno$cluster_label,clusterInfoMTG$cluster_label)]
 anno$cluster_id    <- clusterInfoMTG$cluster_id[match(anno$cluster_label,clusterInfoMTG$cluster_label)]
 ```
@@ -77,13 +77,13 @@ Next, convert the data into CPM(exons+introns) and format appropriately.
   
 ```{r format MTG data}
 ## Calculate CPM
-CPM <- cpm(introns+exons)
+CPM <- cpm(introns[, kp] + exons[, kp])
 rownames(CPM) <- rownames(geneInfo)
 colnames(CPM) <- anno$sample_id
 
 ## Format appropriately
-data <- as.data.frame(t(CPM))
-data$sample_id <- anno$sample_id
+expr.data <- as.data.frame(t(CPM))
+expr.data$sample_id <- anno$sample_id
 ```
   
 Finally, output the results to feather files in the `MTG` directory.  
@@ -96,7 +96,7 @@ dir.create(paste0(homeFolder,"MTG"))
 write_feather(anno,paste0(homeFolder,"MTG/anno.feather"))
 
 # Write data file
-write_feather(data,paste0(homeFolder,"MTG/data.feather"))
+write_feather(expr.data,paste0(homeFolder,"MTG/data.feather"))
 ```
   
 ## Process the mouse data
@@ -149,8 +149,8 @@ rownames(CPM) <- rownames(geneInfo)
 colnames(CPM) <- anno$sample_id
 
 ## Format appropriate
-data <- as.data.frame(t(CPM))
-data$sample_id <- anno$sample_id
+expr.data <- as.data.frame(t(CPM))
+expr.data$sample_id <- anno$sample_id
 ```
   
 Finally, output the results to feather files in the `mouse` directory.  
@@ -163,7 +163,7 @@ dir.create("mouse")
 write_feather(anno,paste0(homeFolder,"mouse/anno.feather"))
 
 # Write data file
-write_feather(data,paste0(homeFolder,"mouse/data.feather"))
+write_feather(expr.data,paste0(homeFolder,"mouse/data.feather"))
 ```
   
   
