@@ -25,8 +25,8 @@ _NOTE: These links are accurate as of April 2019.  If these data are moved in la
 
 
 ```{r setwd}
-homeFolder <- paste0(getwd(), "/")  # UPDATE WITH CORRECT PATH
-knitr::opts_knit$set(root.dir = homeFolder)  
+homeFolder <- "../"  # UPDATE WITH CORRECT PATH
+knitr::opts_knit$set(root.dir = homeFolder)
 #setwd(homeFolder) # UPDATE WITH CORRECT PATH
 ```
 
@@ -34,7 +34,7 @@ knitr::opts_knit$set(root.dir = homeFolder)
 ### Load the relevant libraries
 
 ```{r load libraries, warnings=FALSE}
-source(paste0(homeFolder,"R/Support_Code0_functions.R"))
+source(paste0(homeFolder,"R/Support_code0_functions.R"))
 suppressPackageStartupMessages({
   library(feather)
   library(matrixStats)
@@ -156,8 +156,8 @@ expr.data$sample_id <- anno$sample_id
 Finally, output the results to feather files in the `mouse` directory.  
   
 ```{r output VISp data}
-# Create MTG directory
-dir.create("mouse")
+# Create mouse directory
+dir.create(paste0(homeFolder, "mouse"))
 
 # Write annotation file
 write_feather(anno,paste0(homeFolder,"mouse/anno.feather"))
