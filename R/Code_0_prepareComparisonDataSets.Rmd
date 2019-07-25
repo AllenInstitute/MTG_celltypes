@@ -67,7 +67,7 @@ anno <- auto_annotate(sampInfo[kp,])
 anno$sample_id <- anno$sample_name
 
 # Update the correct cluster colors and ids
-load(paste0(homeFolder,"data/clusterInfoMTG.rda"))        #### May need to adjust location
+load(paste0(homeFolder,"data/clusterInfoMTG.RData"))        #### May need to adjust location
 anno$cluster_color <- clusterInfoMTG$cluster_color[match(anno$cluster_label,clusterInfoMTG$cluster_label)]
 anno$cluster_id    <- clusterInfoMTG$cluster_id[match(anno$cluster_label,clusterInfoMTG$cluster_label)]
 ```
