@@ -26,6 +26,9 @@ source(paste0(scriptsFolder,"Support_extraFunctions.r"))
 source(paste0(scriptsFolder,"Support_violin_functions.R"))
 source(paste0(scriptsFolder,"Support_heatmap_functions.R"))
 
+# Create output folder
+if(! dir.exists(outputFolder)) dir.create(outputFolder)
+
 # Read in the data
 Expr.dat <- feather(paste(dataFolder,"data.feather",sep=""))   # CPM
 anno     <- read_feather(paste(dataFolder,"anno.feather",sep="")) 
