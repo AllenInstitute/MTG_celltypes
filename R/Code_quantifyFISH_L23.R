@@ -24,6 +24,9 @@ library(gridExtra)
 library(viridis)
 options(stringsAsFactors=FALSE)
 
+# Read in the extra scripts
+source(paste0(scriptsFolder,"Support_extraFunctions.r"))
+
 anno     <- read_feather(paste(dataFolder,"anno.feather",sep="")) 
 Expr.dat <- feather(paste(dataFolder,"data.feather",sep="")) 
 Expr.dat <- Expr.dat[match(anno$sample_id,Expr.dat$sample_id),] # Make sure the expression matches the sample information
@@ -359,4 +362,12 @@ pdf(file = paste0(outputFolder,"Fig3c_L23_FREM3_fish_probes.pdf"), width = 3.5, 
 marrangeGrob(g.frem3$plots, nrow = 1, ncol = 1, top = "")
 dev.off()
 
+##########################################
+print("------------------------------------------------------------------------------")
+print("---------------- DO NOT CLOSE THIS R SESSION YET! ----------------------------")
+print("------------------------------------------------------------------------------")
+print(" ")
+print("If FigED9cd_L23_fish_probes.pdf and Fig3c_L23_FREM3_fish_probes.pdf are blank, ")
+print("  copy and paste the code in this script from lines 315 onward and then check")
+print("  again.  The first page will be blank, but remaining pages should have plots.")
 
