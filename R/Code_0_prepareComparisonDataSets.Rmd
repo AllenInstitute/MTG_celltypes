@@ -40,6 +40,7 @@ suppressPackageStartupMessages({
   library(matrixStats)
   library(dplyr)
   library(edgeR)
+  library(data.table)
 })
 options(stringsAsFactors=FALSE)
 ```
@@ -47,11 +48,15 @@ options(stringsAsFactors=FALSE)
   
 ## Process the human MTG data
   
-First we need to read the data into R. *This step is slow.*  
+First we need to read the data into R. 
   
 ```{r read in MTG data}
-exons    <- read.csv(paste0(homeFolder,"website_data/human_MTG_2018-06-14_exon-matrix.csv"),row.names=1)
-introns  <- read.csv(paste0(homeFolder,"website_data/human_MTG_2018-06-14_intron-matrix.csv"),row.names=1)
+tmp      <- fread(paste0(homeFolder,"website_data/human_MTG_2018-06-14_exon-matrix.csv"),header = T, sep = ',',verbose=FALSE)
+exons    <- as.matrix(tmp[,2:dim(tmp)[2]])
+rownames(exons) <- as.character(as.matrix(tmp[,1]))
+tmp      <- fread(paste0(homeFolder,"website_data/human_MTG_2018-06-14_intron-matrix.csv"),header = T, sep = ',',verbose=FALSE)
+introns  <- as.matrix(tmp[,2:dim(tmp)[2]])
+rownames(introns) <- as.character(as.matrix(tmp[,1]))
 geneInfo <- read.csv(paste0(homeFolder,"website_data/human_MTG_2018-06-14_genes-rows.csv"),row.names=1)
 sampInfo <- read.csv(paste0(homeFolder,"website_data/human_MTG_2018-06-14_samples-columns.csv"),row.names=1)
 ```
@@ -82,7 +87,8 @@ rownames(CPM) <- rownames(geneInfo)
 colnames(CPM) <- anno$sample_id
 
 ## Format appropriately
-expr.data <- as.data.frame(t(CPM))
+expr.data <- transpose(as.data.frame(CPM))
+colnames(expr.data) <- rownames(CPM)
 expr.data$sample_id <- anno$sample_id
 ```
   
@@ -106,8 +112,12 @@ We are going to read in the vISp and ALM data separately, and then save them to 
 First we need to read the VISp data into R. *This step is slow.*  
   
 ```{r read in VISp data}
-exonsV    <- read.csv(paste0(homeFolder,"website_data/mouse_VISp_2018-06-14_exon-matrix.csv"),row.names=1)
-intronsV  <- read.csv(paste0(homeFolder,"website_data/mouse_VISp_2018-06-14_intron-matrix.csv"),row.names=1)
+tmp       <- fread(paste0(homeFolder,"website_data/mouse_VISp_2018-06-14_exon-matrix.csv"),header = T, sep = ',',verbose=FALSE)
+exonsV    <- as.matrix(tmp[,2:dim(tmp)[2]])
+rownames(exonsV) <- as.character(as.matrix(tmp[,1]))
+tmp       <- fread(paste0(homeFolder,"website_data/mouse_VISp_2018-06-14_intron-matrix.csv"),header = T, sep = ',',verbose=FALSE)
+intronsV  <- as.matrix(tmp[,2:dim(tmp)[2]])
+rownames(intronsV) <- as.character(as.matrix(tmp[,1]))
 geneInfoV <- read.csv(paste0(homeFolder,"website_data/mouse_VISp_2018-06-14_genes-rows.csv"),row.names=1)
 sampInfoV <- read.csv(paste0(homeFolder,"website_data/mouse_VISp_2018-06-14_samples-columns.csv"),row.names=1)
 ```
@@ -115,8 +125,12 @@ sampInfoV <- read.csv(paste0(homeFolder,"website_data/mouse_VISp_2018-06-14_samp
 Second, we need to read the ALM data into R.  *This step is slow.*  
   
 ```{r read in ALM data}
-exonsA    <- read.csv(paste0(homeFolder,"website_data/mouse_ALM_2018-06-14_exon-matrix.csv"),row.names=1)
-intronsA  <- read.csv(paste0(homeFolder,"website_data/mouse_ALM_2018-06-14_intron-matrix.csv"),row.names=1)
+tmp       <- fread(paste0(homeFolder,"website_data/mouse_ALM_2018-06-14_exon-matrix.csv"),header = T, sep = ',',verbose=FALSE)
+exonsA    <- as.matrix(tmp[,2:dim(tmp)[2]])
+rownames(exonsA) <- as.character(as.matrix(tmp[,1]))
+tmp       <- fread(paste0(homeFolder,"website_data/mouse_ALM_2018-06-14_intron-matrix.csv"),header = T, sep = ',',verbose=FALSE)
+intronsA  <- as.matrix(tmp[,2:dim(tmp)[2]])
+rownames(intronsA) <- as.character(as.matrix(tmp[,1]))
 geneInfoA <- read.csv(paste0(homeFolder,"website_data/mouse_ALM_2018-06-14_genes-rows.csv"),row.names=1)
 sampInfoA <- read.csv(paste0(homeFolder,"website_data/mouse_ALM_2018-06-14_samples-columns.csv"),row.names=1)
 ```
@@ -148,8 +162,9 @@ CPM <- cpm(introns+exons)
 rownames(CPM) <- rownames(geneInfo)
 colnames(CPM) <- anno$sample_id
 
-## Format appropriate
-expr.data <- as.data.frame(t(CPM))
+## Format appropriately
+expr.data <- transpose(as.data.frame(CPM))
+colnames(expr.data) <- rownames(CPM)
 expr.data$sample_id <- anno$sample_id
 ```
   
