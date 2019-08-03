@@ -4,6 +4,20 @@ output: html_notebook
 ---
   
   
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+  
+  
+Make sure to set the correct working directory path!  
+  
+```{r setwd}
+homeFolder <- "../"  # UPDATE WITH CORRECT PATH
+knitr::opts_knit$set(root.dir = homeFolder)
+#setwd(homeFolder) # UPDATE WITH CORRECT PATH
+```  
+  
+  
 ```{r init-workspace, echo=FALSE, message=FALSE, warning=FALSE}
 # Load libraries 
 library(reshape2)
@@ -14,10 +28,10 @@ library(feather)
 
 ```{r load-data, message=FALSE}
 facs.meta <- read_csv(file = "../data/human/mtg_facs_metadata.csv")
-anno <- as.data.frame(read_feather("../data/human/anno.feather"))
-dend1 <- readRDS("../data/human/dend.RData")
+anno <- as.data.frame(read_feather(paste0(homeFolder,"MTG/anno.feather")))
+load(paste0(homeFolder,"MTG/dend.rda"))
 
-human.cl <- unlist(dendrapply(dend1, function(x) if (is.leaf(x)) attr(x, "label")))
+human.cl <- unlist(dendrapply(dend, function(x) if (is.leaf(x)) attr(x, "label")))
 facs.meta$cluster <- factor(facs.meta$cluster, levels = human.cl)
 facs.meta$cluster_type <- factor(facs.meta$cluster_type, levels = c("inh", "exc", "glia"))
 facs.meta$cluster_color <- anno$cluster_color[match(facs.meta$cluster, anno$cluster_label)]
