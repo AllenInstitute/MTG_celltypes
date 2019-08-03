@@ -6,6 +6,7 @@ dataFolder    = "MTG/"
 
 library(pheatmap)
 library(RColorBrewer)
+library(feather)
 
 
 anno     <- read_feather(paste(dataFolder,"anno.feather",sep="")) 
