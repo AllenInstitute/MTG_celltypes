@@ -189,6 +189,7 @@ print("Make layer jitter plots for figures 2-4.")
 # Excitatory
 anno$layer_id     <- anno$brain_subregion_id
 anno$layer_color  <- anno$brain_subregion_color
+anno$layer_label  <- anno$brain_subregion_label
 exc_layers <- build_layer_plot(anno, dend, 0, cluster_ids = which(clusterInfo$class_label=="Glutamatergic"),textSize=1.8, maxPerCluster=100)  # fillColor =
 exc_plot <- plot_grid(exc_layers,align = "v",nrow = 1,rel_widths = 1,rel_heights = 1,labels = "")
 ggsave(paste0(outputFolder,"Fig2_exc_jitterLayerPlot.pdf"), width = 8, height = 6)
