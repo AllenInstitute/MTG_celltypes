@@ -22,6 +22,7 @@ knitr::opts_knit$set(root.dir = homeFolder)
 # Load libraries 
 library(reshape2)
 library(feather)
+library(tidyr)
 
 ```
 
