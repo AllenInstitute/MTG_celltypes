@@ -27,7 +27,7 @@ library(feather)
 
 
 ```{r load-data, message=FALSE}
-facs.meta <- read_csv(file = "../data/human/mtg_facs_metadata.csv")
+facs.meta <- read_csv(file = "../data/mtg_facs_metadata.csv")
 anno <- as.data.frame(read_feather(paste0(homeFolder,"MTG/anno.feather")))
 load(paste0(homeFolder,"MTG/dend.rda"))
 
